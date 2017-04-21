@@ -1,11 +1,10 @@
-# Easing and Tweening Library for Unity
+# Use meshes in Unity UI
 
-Tween any float, vector2, vector3 or quaternion. Extension methods for often used properties so that tweening can be as easy as 
-```cs
-easeTarget.ScaleTo(targetScale, animationLength, easingStyle);
-```
-## Example
-An [Example](https://alchem.itch.io/unity-easing) where you can fiddle with some of the easing parameters.
+This component scales meshes so that they fit into a UI Rect. Canvas render mode can't be ScreenSpaceOverlay and the set-up should be like this:
+
+--GameObject (has the CanvasElement3D component, the UI Rect defines the scale)
+----Scaler (empty GameObject (this is so that the 3D Element can be made up of multiple meshes))
+------Actual Meshes (the Meshes that should be scaled, drag all the meshes that should be considered into the rendersToScale property on the CanvasElement3D)
 
 ## License
-Licensed under a MIT-License. The easing equations are under a BSD-License.
+Licensed under a MIT-License.
